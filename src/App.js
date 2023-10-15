@@ -4,23 +4,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-const [selectedGenre, setSelectedGenre] = useState('');
-const [selectedFormat, setSelectedFormat] = useState('');
-const [selectedStructure, setSelectedStructure] = useState('');
+  const [selectedGenre, setSelectedGenre] = useState(
+    JSON.parse(localStorage.getItem('selectedGenre')) || ''
+  );
+  const [selectedFormat, setSelectedFormat] = useState(
+    localStorage.getItem('selectedFormat') || ''
+  );
+  const [selectedStructure, setSelectedStructure] = useState(
+    localStorage.getItem('selectedStructure') || ''
+  );
 
-const handleGenreSelect = (genre) => {
-  setSelectedGenre(genre);
-};
+  const handleGenreSelect = (genre) => {
+    setSelectedGenre(genre);
+    // Save the selected template to local storage
+    localStorage.setItem('selectedGenre', JSON.stringify(genre));
+  };
 
-const handleFormatSelect = (format) => {
-  setSelectedFormat(format);
-};
+  const handleFormatSelect = (format) => {
+    setSelectedFormat(format);
+    // Save the selected genre to local storage
+    localStorage.setItem('selectedFormat', format);
+  };
 
-const handleStructureSelect = (structure) => {
-  setSelectedStructure(structure);
-};
+  const handleStructureSelect = (structure) => {
+    setSelectedStructure(structure);
+    // Save the selected structure to local storage
+    localStorage.setItem('selectedStructure', structure);
+  };
 
- 
 return (
     <div className="container mt-4">
       <h1>Story Selector</h1>
@@ -53,6 +64,7 @@ return (
       </div>
     </div>
   );
-  
-}
+
+  }
+
 export default App;
