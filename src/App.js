@@ -32,6 +32,13 @@ function App() {
     localStorage.setItem('selectedStructure', structure);
   };
 
+  const handleSaveToLocalStorage = () => {
+    // Save the current selections to local storage
+    localStorage.setItem('savedGenre', JSON.stringify(selectedGenre));
+    localStorage.setItem('savedFormat', selectedFormat);
+    localStorage.setItem('savedStructure', selectedStructure);
+  };
+
 return (
     <div className="container mt-4">
       <h1>Story Selector</h1>
@@ -60,11 +67,14 @@ return (
               <strong>Selected Structure:</strong> {selectedStructure}
             </div>
           )}
-        </div>
+        <button className="btn btn-primary" onClick={handleSaveToLocalStorage}>
+                Save Results
+              </button>
+            </div>
       </div>
-    </div>
-  );
+      </div>
+);
 
-  }
+}
 
 export default App;
