@@ -3,23 +3,25 @@ import TemplateList from './TemplateList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState('');
-  const [selectedFormat, setSelectedFormat] = useState('');
-  const [selectedStructure, setSelectedStructure] = useState('');
-  
-  const handleGenreSelect = (genre) => {
-    setSelectedGenre(genre);
-  };
-  
-  const handleFormatSelect = (format) => {
-    setSelectedFormat(format);
-  };
 
-  const handleStructureSelect = (structure) => {
-    setSelectedStructure(structure);
-  };
+const [selectedGenre, setSelectedGenre] = useState('');
+const [selectedFormat, setSelectedFormat] = useState('');
+const [selectedStructure, setSelectedStructure] = useState('');
 
-  return (
+const handleGenreSelect = (genre) => {
+  setSelectedGenre(genre);
+};
+
+const handleFormatSelect = (format) => {
+  setSelectedFormat(format);
+};
+
+const handleStructureSelect = (structure) => {
+  setSelectedStructure(structure);
+};
+
+ 
+return (
     <div className="container mt-4">
       <h1>Story Selector</h1>
       <p>Select a genre, format, and structure:</p>
@@ -51,6 +53,6 @@ function App() {
       </div>
     </div>
   );
+  
 }
-
 export default App;

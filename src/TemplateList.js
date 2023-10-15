@@ -122,7 +122,7 @@ function TemplateList({ onGenreSelect, onFormatSelect, onStructureSelect }) {
            )}
             {selectedStructure !== '' && (
            <div className="mt-3">
-          <h4>Selected Story Structure</h4>
+          <h4>Selected Structure</h4>
             {filteredStructures.map((structure) => (
             <div key={structure.id}>
             <strong>{structure.title}</strong>
